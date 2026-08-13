@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lemar Corporate Services Provider — Business Setup in Dubai</title>
+<meta name="description" content="Dubai business setup, licensing, visas, compliance, corporate services, advisory, branding and marketing. One partner, every stage." />
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;450;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E1621;
+  --ink-2:#1B2836;
+  --paper:#FCFCFA;
+  --canvas:#E4E7E2;
+  --green:#009645;
+  --green-deep:#00602D;
+  --green-wash:#EAF5EE;
+  --red:#CF142B;
+  --muted:#69747F;
+  --hair:rgba(14,22,33,.13);
+  --hair-soft:rgba(14,22,33,.07);
+  --display:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --sheet-pad:clamp(28px,5.2vw,72px);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  background:var(--canvas);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.55;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(to right,rgba(14,22,33,.045) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(14,22,33,.045) 1px,transparent 1px);
+  background-size:88px 88px;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 30%,#000,transparent 78%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 30%,#000,transparent 78%);
+}
+
+/* ---------- utility type ---------- */
+.label{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);
+}
+.label--green{color:var(--green-deep)}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;letter-spacing:-.028em;line-height:1.04}
+p{font-size:15px;color:#3D4854;line-height:1.62}
+
+/* ---------- top bar ---------- */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:14px clamp(16px,3.4vw,40px);
+  background:rgba(228,231,226,.72);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--hair-soft);
+}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.logo{display:block;width:auto;height:auto}
+.logo--bar{height:32px}
+.logo--mast{height:clamp(44px,5.2vw,62px)}
+.logo-plate{display:inline-block;background:#fff;padding:12px 16px;border-radius:2px;margin-bottom:22px}
+.logo-plate img{height:clamp(32px,3.8vw,42px);width:auto;display:block}
+.brand-name{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.03em}
+.brand-sub{display:block;font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-top:1px}
+.topbar-right{display:flex;align-items:center;gap:10px}
+.tel{font-family:var(--mono);font-size:12px;color:var(--ink);text-decoration:none;letter-spacing:.02em;padding:8px 2px}
+.tel:hover{color:var(--green-deep)}
+
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--display);font-size:13px;font-weight:600;letter-spacing:-.01em;
+  padding:11px 18px;border-radius:2px;border:1px solid var(--ink);
+  background:var(--ink);color:#fff;text-decoration:none;cursor:pointer;
+  transition:background .4s var(--ease),color .4s var(--ease),transform .4s var(--ease);
+}
+.btn:hover{background:var(--green-deep);border-color:var(--green-deep);transform:translateY(-1px)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:var(--hair)}
+.btn--ghost:hover{background:transparent;color:var(--green-deep);border-color:var(--green)}
+.btn--light{background:#fff;color:var(--ink);border-color:#fff}
+.btn--light:hover{background:var(--green);border-color:var(--green);color:#fff}
+.btn svg{width:14px;height:14px;transition:transform .4s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+
+/* ---------- deck / sheets ---------- */
+.deck{position:relative;z-index:1;padding:96px clamp(12px,3vw,48px) clamp(48px,7vw,110px);display:flex;flex-direction:column;align-items:center;gap:clamp(28px,5vw,64px)}
+.sheet{
+  position:relative;width:100%;max-width:1000px;background:var(--paper);
+  box-shadow:0 1px 1px rgba(14,22,33,.05),0 18px 40px -18px rgba(14,22,33,.28),0 60px 90px -60px rgba(14,22,33,.5);
+}
+.sheet::after{ /* paper grain */
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.42;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/><feColorMatrix type='saturate' values='0'/></filter><rect width='140' height='140' filter='url(%23n)' opacity='.055'/></svg>");
+}
+.sheet-inner{position:relative;z-index:2;padding:var(--sheet-pad)}
+
+/* print-proof marks — the signature detail */
+.mark{position:absolute;width:22px;height:22px;z-index:3;pointer-events:none}
+.mark span{position:absolute;background:var(--hair)}
+.mark span:first-child{left:0;top:50%;width:100%;height:1px}
+.mark span:last-child{top:0;left:50%;height:100%;width:1px}
+.mark--tl{top:-11px;left:-11px}.mark--tr{top:-11px;right:-11px}
+.mark--bl{bottom:-11px;left:-11px}.mark--br{bottom:-11px;right:-11px}
+
+.sheet-tag{
+  position:absolute;top:-26px;left:0;display:flex;align-items:center;gap:10px;z-index:3;
+}
+.swatches{display:flex;gap:3px}
+.swatches i{width:9px;height:9px;display:block;border-radius:1px}
+
+.sheet-head{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:24px;
+  padding-bottom:20px;border-bottom:1px solid var(--hair);
+}
+.sheet-foot{
+  position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;justify-content:space-between;
+  padding:16px var(--sheet-pad);border-top:1px solid var(--hair);
+}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px 20px}
+.foot-links a{font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:.03em}
+.foot-links a:hover{color:var(--green-deep)}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(30px,4.6vw,54px) 0 0}
+.hero h1{
+  font-size:clamp(36px,6.1vw,70px);font-weight:700;max-width:16ch;margin:18px 0 0;
+}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln > span{display:block;transform:translateY(105%);transition:transform 1s var(--ease)}
+.hero h1 em{font-style:normal;color:var(--green-deep)}
+.is-in .hero h1 .ln > span{transform:translateY(0)}
+.hero h1 .ln:nth-child(2) > span{transition-delay:.09s}
+.hero h1 .ln:nth-child(3) > span{transition-delay:.18s}
+.hero-sub{max-width:52ch;margin-top:22px;font-size:clamp(15px,1.5vw,17px);color:#3D4854}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+
+/* skyline */
+.skyline{width:100%;margin-top:clamp(22px,3.4vw,38px);display:block}
+.skyline .draw{stroke-dasharray:var(--len,1200);stroke-dashoffset:var(--len,1200);transition:stroke-dashoffset 2.4s var(--ease)}
+.is-in .skyline .draw{stroke-dashoffset:0}
+.skyline .glow{opacity:0;transition:opacity 1.4s ease 1.1s}
+.is-in .skyline .glow{opacity:1}
+
+/* ---------- stat strip ---------- */
+.strip{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);margin-top:clamp(22px,3vw,34px)}
+.strip > div{padding:20px 22px 20px 0}
+.strip > div + div{border-left:1px solid var(--hair);padding-left:22px}
+.stat-n{font-family:var(--display);font-size:clamp(26px,3.4vw,36px);font-weight:700;letter-spacing:-.04em;line-height:1}
+.stat-l{margin-top:7px;font-size:12.5px;color:var(--muted);line-height:1.4}
+
+/* ---------- section shell ---------- */
+.sect{padding:clamp(38px,5.4vw,64px) 0 0}
+.sect-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px}
+.sect-head h2{font-size:clamp(21px,2.7vw,29px)}
+.rule{flex:1;height:1px;background:var(--hair)}
+
+/* ---------- why grid ---------- */
+.why{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--hair-soft)}
+.why article{background:var(--paper);padding:24px 26px 26px 0;position:relative}
+.why article:nth-child(even){padding-left:26px}
+.why article:nth-child(odd){padding-right:26px}
+.why .ico{width:26px;height:26px;color:var(--green-deep);margin-bottom:14px}
+.why h3{font-size:16.5px;font-weight:600;margin-bottom:7px}
+.why p{font-size:14px}
+
+/* ---------- jurisdiction selector ---------- */
+.jur{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(20px,3vw,40px);align-items:start}
+.jur-tabs{display:flex;flex-direction:column;border-top:1px solid var(--hair)}
+.jur-tab{
+  all:unset;display:flex;align-items:center;gap:14px;padding:18px 6px;cursor:pointer;
+  border-bottom:1px solid var(--hair);position:relative;transition:padding-left .45s var(--ease);
+}
+.jur-tab::before{content:"";position:absolute;left:0;top:0;bottom:-1px;width:2px;background:var(--green);transform:scaleY(0);transform-origin:top;transition:transform .5s var(--ease)}
+.jur-tab:hover{padding-left:14px}
+.jur-tab[aria-selected="true"]{padding-left:14px}
+.jur-tab[aria-selected="true"]::before{transform:scaleY(1)}
+.jur-tab:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.jur-tab .num{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.jur-tab .nm{font-family:var(--display);font-size:17px;font-weight:600;letter-spacing:-.02em}
+.jur-tab[aria-selected="true"] .nm{color:var(--green-deep)}
+.jur-panel{min-height:280px}
+.jur-panel[hidden]{display:none}
+.jur-fig{width:100%;max-width:330px;margin-bottom:20px}
+.jur-panel h3{font-size:19px;margin-bottom:10px}
+.jur-list{list-style:none;margin-top:16px;display:grid;gap:9px}
+.jur-list li{display:flex;gap:10px;font-size:14px;color:#3D4854;align-items:flex-start}
+.jur-list svg{width:15px;height:15px;flex:0 0 auto;margin-top:3px;color:var(--green)}
+.fade-swap{animation:swap .55s var(--ease)}
+@keyframes swap{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.jur-note{margin-top:22px;padding:14px 16px;background:var(--green-wash);border-left:2px solid var(--green);font-size:13px;color:#1F4030}
+
+/* ---------- journey rail ---------- */
+.rail-wrap{overflow-x:auto;padding-bottom:6px;-ms-overflow-style:none;scrollbar-width:none}
+.rail-wrap::-webkit-scrollbar{display:none}
+.rail{min-width:760px;width:100%}
+.rail .track{stroke:var(--hair);stroke-width:1}
+.rail .fill{stroke:var(--green);stroke-width:1.5;stroke-dasharray:900;stroke-dashoffset:900;transition:stroke-dashoffset 2s var(--ease)}
+.is-in .rail .fill{stroke-dashoffset:0}
+.rail .node{fill:var(--paper);stroke:var(--hair);stroke-width:1;transition:fill .5s var(--ease) var(--d,0s),stroke .5s var(--ease) var(--d,0s)}
+.is-in .rail .node{fill:var(--green);stroke:var(--green)}
+.rail .node.last{transition-delay:1.5s}
+.rail text{font-family:var(--mono);font-size:8.4px;letter-spacing:.1em;fill:var(--muted);text-transform:uppercase}
+.rail .cap{font-family:var(--display);font-size:11px;letter-spacing:-.01em;fill:var(--ink);text-transform:none}
+
+/* ---------- services ---------- */
+.svc{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--hair-soft);border-top:1px solid var(--hair-soft)}
+.svc article{background:var(--paper);padding:26px;position:relative;overflow:hidden;transition:background .5s var(--ease)}
+.svc article::before{content:"";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
+.svc article:hover{background:#fff}
+.svc article:hover::before{transform:scaleX(1)}
+.svc-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.svc-ico{width:38px;height:38px;flex:0 0 auto;display:grid;place-items:center;background:var(--ink);color:#fff;border-radius:2px;transition:background .5s var(--ease)}
+.svc article:hover .svc-ico{background:var(--green-deep)}
+.svc-ico svg{width:19px;height:19px}
+.svc h3{font-size:14.5px;font-weight:600;letter-spacing:-.015em;line-height:1.25}
+.svc p{font-size:13.5px;line-height:1.6}
+.svc .fine{margin-top:9px;font-family:var(--mono);font-size:10px;letter-spacing:.05em;color:var(--muted);line-height:1.5}
+
+/* ---------- process ---------- */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair-soft)}
+.proc article{background:var(--paper);padding:22px 20px 24px;position:relative}
+.proc .step{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--green-deep);display:block;margin-bottom:26px}
+.proc .dot{position:absolute;top:44px;left:20px;width:9px;height:9px;border-radius:50%;background:var(--green);transform:scale(0);transition:transform .6s var(--ease)}
+.is-in .proc .dot{transform:scale(1)}
+.proc article:nth-child(2) .dot{transition-delay:.12s}
+.proc article:nth-child(3) .dot{transition-delay:.24s}
+.proc article:nth-child(4) .dot{transition-delay:.36s}
+.proc h3{font-size:15px;margin:16px 0 7px}
+.proc p{font-size:13px}
+
+/* ---------- checklist + pricing ---------- */
+.two{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,3vw,40px)}
+.card{border:1px solid var(--hair);padding:26px}
+.card--dark{background:var(--ink);border-color:var(--ink);color:#fff}
+.card--dark p{color:rgba(255,255,255,.72)}
+.card--dark .label{color:rgba(255,255,255,.5)}
+.card h3{font-size:18px;margin-bottom:14px}
+.card--dark h3{color:#fff}
+.check{list-style:none;display:grid;gap:11px;margin-top:4px}
+.check li{display:flex;gap:11px;font-size:14px;color:#3D4854;align-items:flex-start}
+.check .box{width:14px;height:14px;flex:0 0 auto;margin-top:3px;border:1px solid var(--hair);border-radius:1px;position:relative}
+.check .box::after{content:"";position:absolute;inset:2px;background:var(--green);transform:scale(0);transition:transform .45s var(--ease)}
+.check li:hover .box::after{transform:scale(1)}
+.hint{margin-top:18px;font-size:13px;color:var(--muted);font-style:italic}
+
+/* ---------- closing CTA ---------- */
+.close{
+  position:relative;z-index:2;margin-top:clamp(38px,5vw,60px);
+  background:var(--ink);color:#fff;padding:clamp(32px,5vw,58px) var(--sheet-pad);
+  overflow:hidden;
+}
+.close::before{
+  content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,150,69,.45),transparent 66%);
+}
+.close-in{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:32px;align-items:flex-end;justify-content:space-between}
+.close h2{font-size:clamp(24px,3.6vw,40px);color:#fff;max-width:16ch}
+.close .tagline{margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.contact{display:grid;gap:12px;min-width:250px}
+.contact a,.contact span{display:flex;gap:11px;align-items:flex-start;color:rgba(255,255,255,.85);text-decoration:none;font-size:13.5px;line-height:1.45}
+.contact a:hover{color:#fff}
+.contact svg{width:15px;height:15px;flex:0 0 auto;margin-top:2px;color:var(--green)}
+.close-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+
+/* ---------- reveal system ---------- */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.rv.is-in{opacity:1;transform:none}
+.stag > *{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.stag.is-in > *{opacity:1;transform:none}
+.stag.is-in > *:nth-child(1){transition-delay:.04s}
+.stag.is-in > *:nth-child(2){transition-delay:.1s}
+.stag.is-in > *:nth-child(3){transition-delay:.16s}
+.stag.is-in > *:nth-child(4){transition-delay:.22s}
+.stag.is-in > *:nth-child(5){transition-delay:.28s}
+.stag.is-in > *:nth-child(6){transition-delay:.34s}
+.stag.is-in > *:nth-child(7){transition-delay:.4s}
+.stag.is-in > *:nth-child(8){transition-delay:.46s}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .jur{grid-template-columns:1fr}
+  .proc{grid-template-columns:repeat(2,1fr)}
+  .two{grid-template-columns:1fr}
+}
+@media (max-width:680px){
+  .why,.svc{grid-template-columns:1fr}
+  .why article{padding:22px 0 !important}
+  .strip{grid-template-columns:1fr}
+  .strip > div + div{border-left:0;border-top:1px solid var(--hair);padding-left:0}
+  .strip > div{padding:16px 0}
+  .mark,.sheet-tag{display:none}
+  .tel{display:none}
+  .logo--bar{height:26px}
+  .close-in{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition-duration:.01ms !important}
+  .rv,.stag > *{opacity:1;transform:none}
+  .hero h1 .ln > span{transform:none}
+  .skyline .draw{stroke-dashoffset:0}
+  .rail .fill{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="Lemar Corporate Services Provider — home">
+    <img class="logo logo--bar" src="logo.png" alt="Lemar Corporate Services Provider" width="780" height="319">
+  </a>
+  <div class="topbar-right">
+    <a class="tel" href="tel:+971523767776">+971 523 767 776</a>
+    <a class="btn" href="#book">Book a consultation
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h12M9 3l5 5-5 5"/></svg>
+    </a>
+  </div>
+</header>
+
+<main class="deck" id="top">
+
+<!-- ================= SHEET 01 ================= -->
+<article class="sheet" id="sheet-01">
+  <span class="mark mark--tl"><span></span><span></span></span>
+  <span class="mark mark--tr"><span></span><span></span></span>
+  <span class="mark mark--bl"><span></span><span></span></span>
+  <span class="mark mark--br"><span></span><span></span></span>
+  <div class="sheet-tag">
+    <span class="swatches"><i style="background:#0E1621"></i><i style="background:#009645"></i><i style="background:#CF142B"></i></span>
+    <span class="label">Sheet 01 — Why Lemar</span>
+  </div>
+
+  <div class="sheet-inner">
+    <div class="sheet-head rv">
+      <div>
+        <img class="logo logo--mast" src="logo.png" alt="Lemar Corporate Services Provider" width="780" height="319">
+        <p style="margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--muted)">Dubai · Mainland · Free Zone · Offshore</p>
+      </div>
+      <span class="label">Est. Dubai, UAE</span>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>
+        <span class="ln"><span>Start your business</span></span>
+        <span class="ln"><span>in Dubai. Stay compliant.</span></span>
+        <span class="ln"><span><em>Keep growing.</em></span></span>
+      </h1>
+      <p class="hero-sub rv">From choosing the right licence to opening your bank account and filing on time — we handle the process end to end, so you can put your attention where it earns.</p>
+      <div class="hero-cta rv">
+        <a class="btn" href="#book">Book your free consultation
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h12M9 3l5 5-5 5"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="#services">See all services</a>
+      </div>
+
+      <!-- SKYLINE FIGURE -->
+      <svg class="skyline" viewBox="0 0 1000 250" fill="none" aria-label="Dubai skyline illustration" role="img">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#009645" stop-opacity=".07"/>
+            <stop offset="100%" stop-color="#009645" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#0E1621" stop-opacity=".14"/>
+            <stop offset="45%" stop-color="#0E1621" stop-opacity=".5"/>
+            <stop offset="100%" stop-color="#0E1621" stop-opacity=".14"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="30" width="1000" height="190" fill="url(#sky)"/>
+        <!-- horizon -->
+        <line x1="0" y1="220" x2="1000" y2="220" stroke="url(#fade)" stroke-width="1"/>
+        <!-- low rise left -->
+        <g stroke="#0E1621" stroke-opacity=".38" stroke-width="1" class="draw" style="--len:900">
+          <path d="M40 220v-52h44v52M56 168v-12h12v12"/>
+          <path d="M100 220v-74h30v74M112 146v-10h6v10"/>
+          <path d="M146 220v-40h52v40"/>
+        </g>
+        <!-- burj al arab (sail) -->
+        <g stroke="#0E1621" stroke-opacity=".45" stroke-width="1.1" class="draw" style="--len:700">
+          <path d="M214 220V96c34 18 54 62 58 124"/>
+          <path d="M214 96l58 124"/>
+          <path d="M226 132l30 62M222 114l40 84"/>
+        </g>
+        <!-- mid cluster -->
+        <g stroke="#0E1621" stroke-opacity=".35" stroke-width="1" class="draw" style="--len:1000">
+          <path d="M300 220v-96h34v96M312 124v-14h10v14"/>
+          <path d="M348 220v-62h28v62"/>
+          <path d="M390 220v-118h30v118M400 102v-16h10v16"/>
+        </g>
+        <!-- museum of the future (torus) -->
+        <g class="draw" style="--len:520" stroke="#009645" stroke-opacity=".8" stroke-width="1.2">
+          <ellipse cx="470" cy="176" rx="34" ry="44"/>
+          <ellipse cx="470" cy="176" rx="15" ry="24"/>
+          <path d="M436 176h68"/>
+        </g>
+        <!-- burj khalifa -->
+        <g stroke="#0E1621" stroke-opacity=".55" stroke-width="1.2" class="draw" style="--len:900">
+          <path d="M556 220V78l14-42 14 42v142"/>
+          <path d="M570 36V8"/>
+          <path d="M540 220v-92h16M600 220v-92h-16"/>
+          <path d="M556 110h28M552 150h36M548 186h44"/>
+        </g>
+        <!-- right cluster -->
+        <g stroke="#0E1621" stroke-opacity=".35" stroke-width="1" class="draw" style="--len:1100">
+          <path d="M628 220v-84h30v84"/>
+          <path d="M672 220v-124h26v124M681 96v-14h8v14"/>
+          <path d="M712 220v-58h40v58"/>
+          <path d="M766 220v-102h32v102M776 118l16-18 16 18v102"/>
+          <path d="M836 220v-70h34v70"/>
+          <path d="M884 220v-108h26v108"/>
+          <path d="M924 220v-46h40v46"/>
+        </g>
+        <!-- ambient light dots -->
+        <g class="glow" fill="#009645">
+          <circle cx="570" cy="8" r="2.4"/><circle cx="686" cy="82" r="1.8"/><circle cx="470" cy="132" r="1.8"/>
+        </g>
+      </svg>
+    </section>
+
+    <!-- STAT STRIP -->
+    <div class="strip stag">
+      <div>
+        <div class="stat-n"><span data-count="1000">0</span>+</div>
+        <div class="stat-l">Clients supported through setup and beyond</div>
+      </div>
+      <div>
+        <div class="stat-n">3</div>
+        <div class="stat-l">Jurisdictions — Mainland, Free Zone, Offshore</div>
+      </div>
+      <div>
+        <div class="stat-n">1</div>
+        <div class="stat-l">Partner for formation, compliance and growth</div>
+      </div>
+    </div>
+
+    <!-- WHY -->
+    <section class="sect">
+      <div class="sect-head rv">
+        <span class="label label--green">Why Lemar</span>
+        <h2>Most providers stop at your licence.</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="why stag">
+        <article>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+          <h3>One partner, every stage</h3>
+          <p>Formation, licensing, visas, banking, compliance, corporate services, advisory, branding and marketing — coordinated by one team.</p>
+        </article>
+        <article>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 010 18 15 15 0 010-18z"/></svg>
+          <h3>Real Dubai expertise</h3>
+          <p>Practical working knowledge of local jurisdictions, authorities and procedures — applied to your case, not recycled from a template.</p>
+        </article>
+        <article>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.4"/></svg>
+          <h3>Built around your activity</h3>
+          <p>Your structure follows your business activity, ownership requirements, visa needs and where you plan to be in three years.</p>
+        </article>
+        <article>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l7.5 3v6c0 4.5-3 7.9-7.5 9-4.5-1.1-7.5-4.5-7.5-9V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg>
+          <h3>Transparent by default</h3>
+          <p>Clear scope, honest timelines, and no promises we can't stand behind. Where approval sits with an authority, we say so.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- JURISDICTION SELECTOR -->
+    <section class="sect">
+      <div class="sect-head rv">
+        <span class="label label--green">Choose a structure</span>
+        <h2>Which setup fits your business?</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="jur rv">
+        <div class="jur-tabs" role="tablist" aria-label="Company jurisdictions">
+          <button class="jur-tab" role="tab" aria-selected="true" aria-controls="p-main" id="t-main">
+            <span class="num">01</span><span class="nm">Mainland</span>
+          </button>
+          <button class="jur-tab" role="tab" aria-selected="false" aria-controls="p-free" id="t-free" tabindex="-1">
+            <span class="num">02</span><span class="nm">Free Zone</span>
+          </button>
+          <button class="jur-tab" role="tab" aria-selected="false" aria-controls="p-off" id="t-off" tabindex="-1">
+            <span class="num">03</span><span class="nm">Offshore</span>
+          </button>
+          <div class="jur-note">
+            The right choice depends on your activity, ownership, visa needs and how you plan to operate. We'll assess your requirements and recommend the structure that fits.
+          </div>
+        </div>
+
+        <div>
+          <!-- MAINLAND -->
+          <div class="jur-panel" role="tabpanel" id="p-main" aria-labelledby="t-main">
+            <svg class="jur-fig" viewBox="0 0 320 150" fill="none" aria-hidden="true">
+              <rect x="1" y="1" width="318" height="148" stroke="#0E1621" stroke-opacity=".1"/>
+              <g stroke="#009645" stroke-width="1.2">
+                <circle cx="160" cy="75" r="15" fill="#EAF5EE"/>
+                <path d="M160 60V30M160 90v30M145 75H50M175 75h95M149 64l-40-30M171 64l40-30M149 86l-40 30M171 86l40 30"/>
+              </g>
+              <g fill="#0E1621" fill-opacity=".78">
+                <circle cx="160" cy="26" r="4"/><circle cx="160" cy="124" r="4"/>
+                <circle cx="46" cy="75" r="4"/><circle cx="274" cy="75" r="4"/>
+                <circle cx="105" cy="31" r="4"/><circle cx="215" cy="31" r="4"/>
+                <circle cx="105" cy="119" r="4"/><circle cx="215" cy="119" r="4"/>
+              </g>
+              <text x="160" y="79" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" fill="#00602D">YOU</text>
+            </svg>
+            <h3>Trade across the whole UAE market</h3>
+            <p>A mainland licence lets you work directly with the local market and government entities, with room to expand your activities and visa capacity as you grow.</p>
+            <ul class="jur-list">
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.2 3.2L13 5"/></svg>Trade anywhere in the UAE without a local distributor</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.2 3.2L13 5"/></svg>Eligible to bid for government and semi-government work</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.2 3.2L13 5"/></svg>Broad range of commercial and professional activities</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.2 3.2L13 5"/></svg>Office and visa capacity that scales with headcount</li>
+            </ul>
+          </div>
+
+          <!-- FREE ZONE -->
+          <div class="jur-panel" role="tabpanel" id="p-free" aria-labelledby="t-free" hidden>
+            <svg class="jur-fig" viewBox="0 0 320 150" fill="none" aria-hidden="true">
+              <rect x="1" y="1" width="318" height="148" stroke="#0E1621" stroke-opacity=".1"/>
+              <path d="M160 22l58 34v58l-58 34-58-34V56z" fill="#EAF5EE" stroke="#009645" stroke-width="1.2"/>
+              <path d="M160 44l38 22v38l-38 22-38-22V66z" stroke="#009645" stroke-width="1" stroke-opacity=".55" stroke-dasharray="3 3"/>
+              <g fill="#0E1621" fill-opacity=".78">
+                <rect x="150" y="66" width="20" height="20" rx="1"/>
+                <rect x="128" y="88" width="12" height="12" rx="1"/><rect x="180" y="88" width="12" height="12" rx="1"/>
+                <rect x="154" y="98" width="12" height="12" rx="1"/>
+              </g>
+              <g stroke="#0E1621" stroke-opacity=".25" stroke-width="1"><path d="M20 75h78M222 75h78"/></g>
+              <text x="30" y="66" font-family="IBM Plex Mono, monospace" font-size="7.5" fill="#69747F">GLOBAL</text>
+              <text x="232" y="66" font-family="IBM Plex Mono, monospace" font-size="7.5" fill="#69747F">EXPORT</text>
+            </svg>
+            <h3>A focused ecosystem for your sector</h3>
+            <p>Free zones offer a streamlined setup inside a defined operating framework, with sector-focused communities and clear ownership rules.</p>
+            <ul class="jur-list">
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.2 3.2L13 5"/></svg>Streamlined incorporation and licensing process</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.2 3.2L13 5"/></svg>Sector-specific zones with built-in business communities</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.2 3.2L13 5"/></svg>Flexible packages, from flexi-desk to full office</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.2 3.2L13 5"/></svg>Well suited to international trade and service businesses</li>
+            </ul>
+          </div>
+
+          <!-- OFFSHORE -->
+          <div class="jur-panel" role="tabpanel" id="p-off" aria-labelledby="t-off" hidden>
+            <svg class="jur-fig" viewBox="0 0 320 150" fill="none" aria-hidden="true">
+              <rect x="1" y="1" width="318" height="148" stroke="#0E1621" stroke-opacity=".1"/>
+              <ellipse cx="160" cy="75" rx="92" ry="40" stroke="#009645" stroke-width="1.2" stroke-dasharray="4 4"/>
+              <ellipse cx="160" cy="75" rx="58" ry="24" stroke="#0E1621" stroke-opacity=".18" stroke-width="1"/>
+              <rect x="146" y="61" width="28" height="28" rx="2" fill="#EAF5EE" stroke="#009645" stroke-width="1.2"/>
+              <path d="M152 82v-9h4v9M160 82v-13h4v13M168 82v-6h4v6" stroke="#00602D" stroke-width="1.1"/>
+              <g fill="#0E1621" fill-opacity=".7"><circle cx="68" cy="75" r="4.5"/><circle cx="252" cy="75" r="4.5"/><circle cx="160" cy="35" r="4.5"/><circle cx="160" cy="115" r="4.5"/></g>
+            </svg>
+            <h3>A holding structure for international interests</h3>
+            <p>An offshore company is built for holding and international business purposes rather than day-to-day operations inside the UAE market.</p>
+            <ul class="jur-list">
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.2 3.2L13 5"/></svg>Suited to holding assets, shares and intellectual property</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.2 3.2L13 5"/></svg>Designed for international business, not local trade</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.2 3.2L13 5"/></svg>No UAE operational office or residence visas attached</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8.5l3.2 3.2L13 5"/></svg>Often used alongside a mainland or free zone entity</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNEY RAIL -->
+    <section class="sect" id="journey">
+      <div class="sect-head rv">
+        <span class="label label--green">The Lemar journey</span>
+        <h2>Formation to Fortune</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="rail-wrap rv">
+        <svg class="rail" viewBox="0 0 900 120" fill="none" aria-label="Nine stage business journey">
+          <line class="track" x1="30" y1="52" x2="870" y2="52"/>
+          <line class="fill" x1="30" y1="52" x2="870" y2="52"/>
+          <g>
+            <circle class="node" cx="30" cy="52" r="5"/>
+            <circle class="node" cx="135" cy="52" r="5"/>
+            <circle class="node" cx="240" cy="52" r="5"/>
+            <circle class="node" cx="345" cy="52" r="5"/>
+            <circle class="node" cx="450" cy="52" r="5"/>
+            <circle class="node" cx="555" cy="52" r="5"/>
+            <circle class="node" cx="660" cy="52" r="5"/>
+            <circle class="node" cx="765" cy="52" r="5"/>
+            <circle class="node last" cx="870" cy="52" r="7"/>
+          </g>
+          <g text-anchor="middle">
+            <text x="30" y="32">01</text><text x="135" y="32">02</text><text x="240" y="32">03</text>
+            <text x="345" y="32">04</text><text x="450" y="32">05</text><text x="555" y="32">06</text>
+            <text x="660" y="32">07</text><text x="765" y="32">08</text><text x="870" y="32">09</text>
+            <text class="cap" x="30" y="76">Formation</text>
+            <text class="cap" x="135" y="76">Licensing</text>
+            <text class="cap" x="240" y="76">Visas</text>
+            <text class="cap" x="345" y="76">Banking</text>
+            <text class="cap" x="450" y="76">Compliance</text>
+            <text class="cap" x="555" y="76">Corporate</text>
+            <text class="cap" x="660" y="76">Advisory</text>
+            <text class="cap" x="765" y="76">Branding</text>
+            <text class="cap" x="870" y="76">Growth</text>
+          </g>
+          <text x="30" y="102" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="#69747F" letter-spacing="1">WHERE MOST PROVIDERS FINISH ↓ STAGE 02</text>
+          <path d="M135 88v-24" stroke="#CF142B" stroke-opacity=".5" stroke-width="1" stroke-dasharray="2 3"/>
+        </svg>
+      </div>
+    </section>
+  </div>
+
+  <footer class="sheet-foot">
+    <span class="label">Lemar Corporate Services Provider</span>
+    <div class="foot-links">
+      <a href="tel:+971523767776">+971 523 767 776</a>
+      <a href="mailto:info@lemarcorporate.com">info@lemarcorporate.com</a>
+      <a href="https://www.lemarcorporate.com" target="_blank" rel="noopener">www.lemarcorporate.com</a>
+    </div>
+    <span class="label">01 / 02</span>
+  </footer>
+</article>
+
+<!-- ================= SHEET 02 ================= -->
+<article class="sheet" id="sheet-02">
+  <span class="mark mark--tl"><span></span><span></span></span>
+  <span class="mark mark--tr"><span></span><span></span></span>
+  <span class="mark mark--bl"><span></span><span></span></span>
+  <span class="mark mark--br"><span></span><span></span></span>
+  <div class="sheet-tag">
+    <span class="swatches"><i style="background:#0E1621"></i><i style="background:#009645"></i><i style="background:#CF142B"></i></span>
+    <span class="label">Sheet 02 — Services &amp; process</span>
+  </div>
+
+  <div class="sheet-inner" id="services">
+    <div class="sheet-head rv">
+      <div>
+        <span class="label">Full service range</span>
+        <h2 style="font-size:clamp(24px,3.4vw,36px);margin-top:10px;max-width:18ch">Everything your business needs, in one place</h2>
+      </div>
+      <span class="label">02</span>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="sect" style="padding-top:clamp(26px,3.4vw,38px)">
+      <div class="svc stag">
+        <article>
+          <div class="svc-top">
+            <span class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 21V6l7-3 7 3v15M4 21h16M9 21v-5h4v5M8 9h2M14 9h2M8 13h2M14 13h2"/></svg></span>
+            <h3>Company formation</h3>
+          </div>
+          <p>Mainland, Free Zone and Offshore setup — including jurisdiction selection, business activity guidance and complete incorporation support.</p>
+        </article>
+        <article>
+          <div class="svc-top">
+            <span class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></span>
+            <h3>Licensing</h3>
+          </div>
+          <p>Commercial, professional and industrial licensing support, with guidance on the approvals and documentation your activity requires.</p>
+        </article>
+        <article>
+          <div class="svc-top">
+            <span class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="11" r="2.4"/><path d="M5 17c.8-2 2.2-3 4-3s3.2 1 4 3M15 9h4M15 13h4"/></svg></span>
+            <h3>Visa services</h3>
+          </div>
+          <p>Investor, employee and family visas, plus Golden Visa assistance where applicable. We guide each step and prepare the documentation.</p>
+          <p class="fine">Final approval remains subject to the relevant authority.</p>
+        </article>
+        <article>
+          <div class="svc-top">
+            <span class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 9l9-5 9 5M5 9v9M10 9v9M14 9v9M19 9v9M3 20h18"/></svg></span>
+            <h3>Business bank account</h3>
+          </div>
+          <p>We help you prepare your documentation and application in line with your business profile and banking requirements.</p>
+          <p class="fine">Account opening is at the bank's discretion.</p>
+        </article>
+        <article>
+          <div class="svc-top">
+            <span class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9.5 8h5M9.5 12h5M9.5 16h3"/></svg></span>
+            <h3>Tax registration &amp; compliance</h3>
+          </div>
+          <p>Corporate Tax and VAT registration, filing support and ongoing compliance — so obligations and deadlines are handled properly.</p>
+        </article>
+        <article>
+          <div class="svc-top">
+            <span class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9.5 13l2 2 3.5-4"/></svg></span>
+            <h3>Corporate services</h3>
+          </div>
+          <p>Corporate secretarial support, governance, company administration, business documentation and document attestation.</p>
+        </article>
+        <article>
+          <div class="svc-top">
+            <span class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20V10M9.5 20V5M15 20v-8M20.5 20V8"/><path d="M3 20h18"/></svg></span>
+            <h3>Business advisory</h3>
+          </div>
+          <p>Business planning, market research, feasibility studies and management consultancy to support decisions you can defend.</p>
+        </article>
+        <article>
+          <div class="svc-top">
+            <span class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l2.3 5.3L20 10l-5.7 1.7L12 17l-2.3-5.3L4 10l5.7-1.7z"/><path d="M18.5 16.5l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9z"/></svg></span>
+            <h3>Branding &amp; marketing</h3>
+          </div>
+          <p>Brand identity, design, marketing materials, social media, content, SEO, digital advertising and media production.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="sect">
+      <div class="sect-head rv">
+        <span class="label label--green">How we work</span>
+        <h2>Four steps, no guesswork</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="proc rv">
+        <article>
+          <span class="step">STEP 01</span><span class="dot"></span>
+          <h3>Consultation</h3>
+          <p>We map your activity, objectives and requirements — and tell you what the process actually involves.</p>
+        </article>
+        <article>
+          <span class="step">STEP 02</span><span class="dot"></span>
+          <h3>Recommendation</h3>
+          <p>You get the structure, jurisdiction and licence that fit your plans, with the reasoning behind each choice.</p>
+        </article>
+        <article>
+          <span class="step">STEP 03</span><span class="dot"></span>
+          <h3>Processing</h3>
+          <p>We prepare and manage the documentation and coordinate with the relevant authorities on your behalf.</p>
+        </article>
+        <article>
+          <span class="step">STEP 04</span><span class="dot"></span>
+          <h3>Ongoing support</h3>
+          <p>Visas, banking, compliance, corporate services and growth support as your business develops.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CHECKLIST + PRICING -->
+    <section class="sect">
+      <div class="two">
+        <div class="card rv">
+          <span class="label label--green">Before you call</span>
+          <h3 style="margin-top:12px">Have this ready</h3>
+          <ul class="check">
+            <li><span class="box"></span>Your intended business activity</li>
+            <li><span class="box"></span>Mainland, Free Zone or Offshore preference, if you have one</li>
+            <li><span class="box"></span>Number of visas you'll need</li>
+            <li><span class="box"></span>Whether you already operate a company in the UAE</li>
+            <li><span class="box"></span>Any additional services — compliance, banking, branding or marketing</li>
+          </ul>
+          <p class="hint">Don't have the answers yet? That's what the consultation is for.</p>
+        </div>
+        <div class="card card--dark rv">
+          <span class="label">Investment</span>
+          <h3 style="margin-top:12px">What does it cost?</h3>
+          <p>Pricing depends on your business activity, jurisdiction, visa requirements and the services you need. There's no useful single number — so we don't publish one.</p>
+          <p style="margin-top:14px">Share your requirements and we'll prepare a tailored quotation, itemised so you can see exactly what you're paying for.</p>
+          <a class="btn btn--light" style="margin-top:22px" href="#book">Get a tailored quote
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h12M9 3l5 5-5 5"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- CLOSING CTA -->
+  <section class="close" id="book">
+    <div class="close-in">
+      <div class="rv">
+        <span class="logo-plate"><img src="logo.png" alt="Lemar Corporate Services Provider" width="780" height="319"></span>
+        <span class="label" style="color:rgba(255,255,255,.5)">Start here</span>
+        <h2 style="margin-top:14px">Your business journey starts with one conversation.</h2>
+        <div class="close-actions">
+          <a class="btn btn--light" href="tel:+971523767776">Call +971 523 767 776</a>
+          <a class="btn" style="background:transparent;border-color:rgba(255,255,255,.28);color:#fff" href="mailto:info@lemarcorporate.com">Email the team</a>
+        </div>
+        <p class="tagline">Empowering your business journey — Formation to Fortune</p>
+      </div>
+      <div class="contact rv">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          Office No. 2103, Supreme Court Complex<br>Dubai, United Arab Emirates
+        </span>
+        <a href="tel:+971523767776">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 005 5L15 13l5 2v4a1 1 0 01-1.1 1A16 16 0 014 5.1 1 1 0 015 4z"/></svg>
+          +971 523 767 776
+        </a>
+        <a href="mailto:info@lemarcorporate.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg>
+          info@lemarcorporate.com
+        </a>
+        <a href="https://www.lemarcorporate.com" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 010 18 15 15 0 010-18z"/></svg>
+          www.lemarcorporate.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="sheet-foot">
+    <span class="label">Mainland · Free Zone · Offshore</span>
+    <div class="foot-links"><a href="#top">Back to top</a></div>
+    <span class="label">02 / 02</span>
+  </footer>
+</article>
+
+</main>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- reveal on scroll ---- */
+  var targets = document.querySelectorAll('.rv,.stag,.hero,.sheet');
+  if(reduce || !('IntersectionObserver' in window)){
+    targets.forEach(function(el){ el.classList.add('is-in'); });
+    document.querySelectorAll('[data-count]').forEach(function(el){ el.textContent = Number(el.dataset.count).toLocaleString(); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    },{threshold:.14, rootMargin:'0px 0px -8% 0px'});
+    targets.forEach(function(el){ io.observe(el); });
+
+    /* ---- count up ---- */
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var el = e.target, end = Number(el.dataset.count), t0 = null;
+        function tick(t){
+          if(!t0) t0 = t;
+          var p = Math.min((t - t0)/1400, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(end * eased).toLocaleString();
+          if(p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        cio.unobserve(el);
+      });
+    },{threshold:.6});
+    document.querySelectorAll('[data-count]').forEach(function(el){ cio.observe(el); });
+  }
+
+  /* fire the hero immediately on load */
+  requestAnimationFrame(function(){
+    document.getElementById('sheet-01').classList.add('is-in');
+    document.querySelector('.hero').classList.add('is-in');
+  });
+
+  /* ---- jurisdiction tabs ---- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.jur-tab'));
+  function select(i){
+    tabs.forEach(function(tab, n){
+      var on = n === i;
+      tab.setAttribute('aria-selected', on ? 'true' : 'false');
+      tab.tabIndex = on ? 0 : -1;
+      var panel = document.getElementById(tab.getAttribute('aria-controls'));
+      panel.hidden = !on;
+      if(on && !reduce){
+        panel.classList.remove('fade-swap');
+        void panel.offsetWidth;
+        panel.classList.add('fade-swap');
+      }
+    });
+  }
+  tabs.forEach(function(tab, i){
+    tab.addEventListener('click', function(){ select(i); });
+    tab.addEventListener('keydown', function(ev){
+      var next = null;
+      if(ev.key === 'ArrowDown' || ev.key === 'ArrowRight') next = (i + 1) % tabs.length;
+      if(ev.key === 'ArrowUp' || ev.key === 'ArrowLeft') next = (i - 1 + tabs.length) % tabs.length;
+      if(next === null) return;
+      ev.preventDefault(); select(next); tabs[next].focus();
+    });
+  });
+})();
+</script>
+</body>
+</html>
